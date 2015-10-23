@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var myFunc = function(arg1, arg2, arg3) {
+		console.log(arg1);
+		console.log(arg2.name + ":" + arg2.title);
+		arg3();
+	}
+
+	myFunc("hello world", {
+		name : "최상규",
+		title : "학생"
+	}, function() {
+		console.log("f가 호출 되었습니다.");
+	});
+	/* 정의와 함께 호출 할 때 */
+	(function(a, b) {
+		var sum = a + b;
+		console.log(sum);
+	})(10, 20);
+	/* 동적 파라미터 */
+	var myFunc2 = function() {
+		var sum = 0;
+		var count = arguments.length;
+		for (var i = 0; i < count; i++) {
+			sum += arguments[i];
+		}
+		console.log(sum)
+	}
+	myFunc2(10, 20, 30, 40, 50);
+</script>
+</head>
+<body>
+
+</body>
+</html>

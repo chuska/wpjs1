@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var Rectangle = function(x1, y1, x2, y2, bgColor) {
+		this.x1 = x1;
+		this.y1 = y1;
+
+		this.x2 = x2;
+		this.y2 = y2;
+
+		this.bgColor = bgColor;
+	}
+	Rectangle.prototype.draw = function() {
+		var width = this.x2 - this.x1;
+		var height = this.y2 - this.y1;
+		document
+				.write("<div style='"+
+				"position:absolute;"+
+				"left:"+this.x1+"px;"+
+				"top:"+this.y1+"px;"+
+				"width:"+width+"px;"+
+				"height:"+height+"px;"+
+				"background-color:"+this.bgColor+
+				"'>"
+						+ "</div>");
+	}
+	var rect1 = new Rectangle(10, 10, 200, 200, "#f00");
+	rect1.draw = function() {
+	}
+	var rect2 = new Rectangle(300, 300, 500, 800, "#00f");
+	rect2.draw();
+	var rect3 = new Rectangle(320, 320, 400, 400, "#0ff");
+	rect3.draw();
+</script>
+</head>
+<body>
+</body>
+</html>

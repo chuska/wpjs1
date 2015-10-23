@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#box {
+	background-color: #D94A38;
+	width: 90px;
+	height: 20px;
+	padding: 40px;
+}
+</style>
+<script>
+	/* 코드 작성 */
+	var init = function() {
+		var box = document.getElementById("box");
+		box.onmousedown = function() {
+			box.innerHTML = "버튼을 떼주세요.";
+			box.style.backgroundColor = "#1ec5e5";
+			box.style.textAlign = "center";
+			box.style.padding="30px";
+			box.style.width= "110px";
+			box.style.height= "40px";
+		}
+		box.onmouseup = function() {
+			box.innerHTML = "클릭하세요.";
+			box.style.backgroundColor = "#d94a38";
+			box.style.padding="40px";
+			box.style.width= "90px";
+			box.style.height= "20px";
+		}
+	}
+</script>
+
+</head>
+<body onload="init();">
+	<div id="box">클릭하세요!</div>
+</body>
+</html>

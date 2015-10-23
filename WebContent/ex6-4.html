@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/* JSON */
+	var person = {
+		name : "최상규",
+		title : "학생",
+		showInfo : function() {
+			console.info(this.name);
+			console.info(this.title);
+		}
+	};
+	person.showInfo();
+	/* 여러객체를 만들어 사용할 경우*/
+	var Person = function(name, title) {
+		this.name = name;
+		this.title = title;
+	}
+	Person.prototype.num = 10;
+	Person.prototype.showInfo = function() {
+		console.info(this.name);
+		console.info(this.title);
+	}
+
+	var p1 = new Person("최상규", "학생");
+	var p2 = new Person("안대혁", "강사");
+
+	console.log(p1);
+	console.log(p2);
+
+	console.log(p1.num);
+	console.log(p2.num);
+
+	p1.showInfo();
+	p2.showInfo();
+
+	p1.num = 20;
+	console.log(p1.num);
+
+	p2.showInfo = function() {
+		alert(this.name + ":" + this.title);
+	}
+	p2.showInfo();
+</script>
+</head>
+<body>
+
+</body>
+</html>

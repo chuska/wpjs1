@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var person = function(name, title) {
+		this.name = name;
+		this.title = title;
+		this.showInfo = function() {
+			console.error(this.name + this.title);
+		}
+	}
+	person.prototype.showInfo = function() {
+		console.info(this.name);
+		console.info(this.title);
+	}
+	var p1 = new person("최상규", "학생");
+	var p2 = new person("안대현", "강사");
+	console.log(p1);
+	console.log(p2);
+	p2.showInfo = function() {
+		console.log(this.name + this.title);
+	}
+	
+	function showInfo() {
+		console.error("asdsaf");
+	}
+	//person.showInfo();
+	showInfo()
+	p1.showInfo();
+	p2.showInfo();
+	console.log(person.prototype.showInfo)
+	
+	
+	var Rectangle=function(x1,y1,x2,y2,bgColor){
+		this.x1 = x1;
+		this.y1 = y1;
+
+		this.x2 = x2;
+		this.y2 = y2;
+
+		this.bgColor = bgColor;
+	}
+	Rectangle.prototype.show=function(){
+		var width=this.x2-this.x1;
+		var height=this.y2-this.y1;
+		document.write("<div style='position:absolute; left:"+this.x1+"px;top:"+this.y1+"px; width:"+width+"; height:"+height+"; background-color:"+this.bgColor+"; '></div>")
+	}
+	var rect=new Rectangle(10, 10, 200, 200, "#f00");
+	rect.show();
+</script>
+</head>
+<body>
+
+</body>
+</html>
